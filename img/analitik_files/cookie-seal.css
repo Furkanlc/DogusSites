@@ -1,0 +1,326 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+@-webkit-keyframes cookieseal-slide-in {
+  from {
+    bottom: -300px;
+    opacity: 0; }
+  to {
+    bottom: 0;
+    opacity: 1; } }
+
+@keyframes cookieseal-slide-in {
+  from {
+    bottom: -300px;
+    opacity: 0; }
+  to {
+    bottom: 0;
+    opacity: 1; } }
+
+@-webkit-keyframes cookieseal-fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes cookieseal-fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/*# sourceMappingURL=cookie-seal.css.map */
+#cookieseal-banner {
+  z-index: 100;
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #414042;
+  width: 100%;
+  -webkit-animation-name: cookieseal-slide-in;
+  -webkit-animation-duration: 0.4s;
+  animation-name: cookieseal-slide-in;
+  animation-duration: 0.4s;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px; }
+  #cookieseal-banner .cookieseal-banner-body {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 2px 16px 2px 16px; }
+    #cookieseal-banner .cookieseal-banner-body p {
+      flex: 1;
+      align-self: flex-end; }
+  #cookieseal-banner button {
+    background-color: #ff8724;
+    border: none;
+    border-radius: 3px;
+    margin: 0 5px 0 10px;
+    min-height: 25px;
+    font: inherit;
+    font-size: 13px;
+    padding: 0 20px;
+    color: #fff;
+    font-weight: bold; }
+  #cookieseal-banner button#cookieseal-banner-close {
+    align-self: flex-start;
+    margin: 5px 0;
+    background: none;
+    font-weight: bold;
+    cursor: pointer; }
+  #cookieseal-banner a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 13px; }
+
+#cs-seal-popup {
+  display: none;
+  position: fixed;
+  z-index: 1101;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-animation-name: cookieseal-fade-in;
+  -webkit-animation-duration: 0.4s;
+  animation-name: cookieseal-fade-in;
+  animation-duration: 0.4s;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px; }
+  #cs-seal-popup .cs-popup-content {
+    background-color: #fefefe;
+    max-height: 90%; }
+    #cs-seal-popup .cs-popup-content .cs-popup-content-brand {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      background-color: #f2f2f2;
+      height: 90px;
+      justify-content: space-between; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-brand h1 {
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 20px; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-brand .cs-popup-content-brand-logo {
+        margin-right: 20px; }
+        #cs-seal-popup .cs-popup-content .cs-popup-content-brand .cs-popup-content-brand-logo img {
+          height: 80px; }
+    #cs-seal-popup .cs-popup-content .cs-popup-content-bottom {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-top: 1px solid #ccc;
+      background-color: #f2f2f2;
+      min-height: 60px;
+      flex-wrap: wrap;
+      padding: 8px; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-bottom p {
+        font-size: 12px;
+        margin: 5px 0;
+        flex-shrink: 1; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-bottom > div {
+        flex-shrink: 0; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-bottom button {
+        background-color: #ff8724;
+        border: none;
+        border-radius: 5px;
+        height: 35px;
+        font: inherit;
+        font-size: 13px;
+        padding: 0 20px;
+        color: #fff;
+        font-weight: bold;
+        margin-left: 10px; }
+    #cs-seal-popup .cs-popup-content .cs-popup-content-tabs {
+      width: 600px; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .state {
+        position: absolute;
+        left: -10000px; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        background-color: white; }
+        #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel {
+          background-color: #fff;
+          padding: 0 20px;
+          overflow: hidden;
+          max-height: 0px;
+          width: 100%;
+          flex-basis: auto; }
+          #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; }
+            #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header h3 {
+              font-size: 14px;
+              font-weight: bold;
+              width: 56%;
+              display: inline-block; }
+            #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header .cs-popup-content-tabs-flex-tabs-panel-tab-content-header-setting {
+              display: block;
+              float: right;
+              width: 20%;
+              text-align: right; }
+            #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header .cs-popup-content-switch {
+              position: relative;
+              display: inline-block;
+              width: 60px;
+              height: 34px; }
+              #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header .cs-popup-content-switch input {
+                opacity: 0;
+                width: 0;
+                height: 0; }
+            #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header .cs-popup-content-slider {
+              position: absolute;
+              cursor: pointer;
+              top: 0;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              background-color: #ccc;
+              -webkit-transition: 0.4s;
+              transition: 0.4s;
+              border-radius: 20px; }
+              #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header .cs-popup-content-slider:before {
+                position: absolute;
+                content: '';
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: 0.4s;
+                transition: 0.4s;
+                border-radius: 26px; }
+            #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header input:checked + .cs-popup-content-slider {
+              background-color: #ff8724; }
+              #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header input:checked + .cs-popup-content-slider:before {
+                -webkit-transform: translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px); }
+            #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header input:focus + .cs-popup-content-slider {
+              box-shadow: 0 0 1px #ff8724; }
+            #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header .cs-popup-content-tabs-flex-tabs-panel-tab-content-header-switch-title {
+              font-size: 12px;
+              font-weight: bold; }
+            #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header .cs-popup-content-tabs-flex-tabs-panel-tab-content-header-switch-title.active {
+              color: #ff8724; }
+            #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header .cs-popup-content-tabs-flex-tabs-panel-tab-content-header-switch-title.inactive {
+              color: #dcdcdc; }
+          #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content p {
+            font-size: 13px; }
+          #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .details {
+            display: flex; }
+          #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .description {
+            width: 360px; }
+            #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .description p {
+              margin: 0;
+              text-align: justify; }
+          #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cookies {
+            margin-left: 20px;
+            overflow: scroll;
+            height: 190px;
+            width: 150px; }
+            #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cookies h4 {
+              font-size: 13px;
+              font-weight: bold;
+              color: #ff8724;
+              margin-top: 0; }
+            #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cookies span {
+              font-size: 12px;
+              font-weight: 300;
+              color: #000;
+              display: block;
+              overflow: hidden;
+              word-break: break-word;
+              margin-bottom: 4px; }
+        #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs label.tab {
+          font-weight: bold;
+          font-size: 12px;
+          width: 80px;
+          word-wrap: break-word;
+          flex-grow: 1;
+          display: inline-block;
+          padding: 10px;
+          vertical-align: top;
+          background-color: #eee;
+          cursor: hand;
+          cursor: pointer;
+          border-left: 10px solid #ccc; }
+          #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs label.tab:hover {
+            background-color: #fff; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs #tab-1:checked ~ .cs-popup-content-tabs-flex-tabs #tab-1-label {
+        background-color: #fff;
+        cursor: default;
+        border-left-color: #ff8724; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs #tab-1:checked ~ .cs-popup-content-tabs-flex-tabs #tab-1-panel {
+        max-height: 1000px;
+        padding: 20px; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs #tab-2:checked ~ .cs-popup-content-tabs-flex-tabs #tab-2-label {
+        background-color: #fff;
+        cursor: default;
+        border-left-color: #ff8724; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs #tab-2:checked ~ .cs-popup-content-tabs-flex-tabs #tab-2-panel {
+        max-height: 1000px;
+        padding: 20px; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs #tab-3:checked ~ .cs-popup-content-tabs-flex-tabs #tab-3-label {
+        background-color: #fff;
+        cursor: default;
+        border-left-color: #ff8724; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs #tab-3:checked ~ .cs-popup-content-tabs-flex-tabs #tab-3-panel {
+        max-height: 1000px;
+        padding: 20px; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs #tab-4:checked ~ .cs-popup-content-tabs-flex-tabs #tab-4-label {
+        background-color: #fff;
+        cursor: default;
+        border-left-color: #ff8724; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs #tab-4:checked ~ .cs-popup-content-tabs-flex-tabs #tab-4-panel {
+        max-height: 1000px;
+        padding: 20px; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs #tab-5:checked ~ .cs-popup-content-tabs-flex-tabs #tab-5-label {
+        background-color: #fff;
+        cursor: default;
+        border-left-color: #ff8724; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs #tab-5:checked ~ .cs-popup-content-tabs-flex-tabs #tab-5-panel {
+        max-height: 1000px;
+        padding: 20px; }
+
+@media (max-width: 600px) {
+  #cookieseal-banner .cookieseal-banner-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10%; }
+    #cookieseal-banner .cookieseal-banner-body p {
+      flex-basis: 100%; }
+  #cookieseal-banner button#cm-banner-customize {
+    margin: 8px 16px 8px 0; }
+  #cookieseal-banner button#cm-banner-accept-all {
+    margin-right: 16px; }
+  #cookieseal-banner button#cookieseal-banner-close {
+    order: -1; }
+  #cs-seal-popup .cs-popup-content {
+    width: 100%; }
+    #cs-seal-popup .cs-popup-content .cs-popup-content-tabs {
+      width: 100%; }
+      #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs {
+        flex-direction: column; }
+        #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .tab {
+          background: #fff;
+          border-bottom: 1px solid #ccc; }
+          #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .tab:last-of-type {
+            border-bottom: none; }
+        #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs label.tab {
+          width: 100%; }
+        #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel {
+          padding: 0; }
+          #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cookies {
+            display: none; }
+          #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .cs-popup-content-tabs-flex-tabs-panel-tab-content-header {
+            justify-content: unset; }
+          #cs-seal-popup .cs-popup-content .cs-popup-content-tabs .cs-popup-content-tabs-flex-tabs .cs-popup-content-tabs-flex-tabs-panel .cs-popup-content-tabs-flex-tabs-panel-tab-content .details .description {
+            width: 100%; } }

@@ -1,0 +1,205 @@
+$(".dt-news .dt-news-select").each(function () {
+    const t = $(this),
+        i = $(this).children("option").length,
+        o = (t.addClass("select-hidden"), t.wrap('<div class="select"></div>'), t.after('<div class="select-styled"></div>'), t.next("div.select-styled")),
+        s = (o.text(t.children("option").eq(0).text()), $("<ul />", { class: "select-options" }).insertAfter(o));
+    for (let e = 0; e < i; e++) $("<li />", { text: t.children("option").eq(e).text(), rel: t.children("option").eq(e).val() }).appendTo(s);
+    const e = s.children("li");
+    o.click(function (e) {
+        e.stopPropagation(),
+            $("div.select-styled.active")
+                .not(this)
+                .each(function () {
+                    $(this).removeClass("active").next("ul.select-options").hide();
+                }),
+            $(this).toggleClass("active").next("ul.select-options").toggle();
+    }),
+        e.click(function (e) {
+            e.stopPropagation(), o.text($(this).text()).removeClass("active"), t.val($(this).attr("rel")), s.hide();
+            newsFilter(t.val($(this).attr("rel")));
+        }),
+        $(document).click(function () {
+            o.removeClass("active"), s.hide();
+        });
+
+}),
+
+    $(function () {
+        $('.tab').click(function () {
+            $('.tab').removeClass("active");
+            $(this).addClass("active");
+        });
+
+        $('.scroll-down').on('click', function (e) {
+            if (jQuery(window).width() >= 1600) {
+                $('html , body').animate({ scrollTop: 1000 }, 1000)
+            }
+            else if (jQuery(window).width() >= 1200 && jQuery(window).width() <= 1280) {
+                $('html , body').animate({ scrollTop: 650 }, 1000)
+            }
+            else
+                $('html , body').animate({ scrollTop: 800 }, 1000)
+        });
+    });
+
+
+$("#video_modal").on("hidden.bs.modal", function (e) {
+    $("#video_modal iframe").attr("src", $("#video_modal iframe").attr("src")),
+        $("#video_modal video").attr("src", $("#video_modal video").attr("src")),
+        $("audio").each(function () {
+            this.pause(), (this.currentTime = 0);
+        });
+}),
+    $(".active-item").on("click", function () {
+        $(".active-item.active").removeClass("active"), $(this).addClass("active");
+    }),
+
+    $(".navigation li").hover(function () {
+        $(this).is(":hover") ? $(this).children("ul").stop().slideDown(300) : $(this).children("ul").stop().slideUp(300);
+    }),
+    $(function () {
+        function e(e) {
+            $("#profile-mobile-" + e).toggle(), $("#read-content-mobile-detail-" + e).toggleClass("d-blck");
+        }
+        $(".read-content").on("click", function () {
+            var e = $(this).data("id");
+            (e = e), $(".desktop-toggle").hide(), $(".card.active").removeClass("active"), $(".read-content").show(), $("#profile" + e).toggle(), $("#content" + e).slideToggle(), $("#card" + e).addClass("active");
+        }),
+            $(".close-content").on("click", function () {
+                var e = $(this).data("close-id");
+                (e = e), $("#profile" + e).hide(), $("#content" + e).hide(), $(".read-content").show(), $(".card.active").removeClass("active");
+            }),
+            $(".read-content-mobile").on("click", function () {
+                e($(this).data("mobile-id"));
+            }),
+            $(".close-mobile-content").on("click", function () {
+                e($(this).data("mobile-close-id"));
+            });
+    });
+$(document).ready(function () {
+    let flag = 0;
+
+    $('.offerItem.active #partnersIcon ul li:first').click();
+    $(".offerItemTitle").click(function () {
+        $(this).parents(".offerslide").children(".offerItem").removeClass("active"),
+            $(this).parents(".offerslide").children(".offerItem").children(".offerItemTitle").removeClass("hide"),
+            $(this).parent(".offerItem").addClass("active"),
+            $(this).addClass("hide");
+        flag = 1
+        $('.offerItem.active #partnersIcon ul li:first').click();
+    }),
+        $(".partnersItems li").click(function (e) {
+
+            $("#partner-subject").val($(this).data("subject"));
+
+            if (flag == 1) {
+                $(this).siblings("li").removeClass("active"), $(this).addClass("active");
+                flag = 0;
+                return 0;
+            }
+
+            if (flag == 0) {
+                e.preventDefault(), $("html , body").animate({ scrollTop: 500 }, 400), $(this).siblings("li").removeClass("active"), $(this).addClass("active");
+            }
+
+        }),
+
+        $(".gog").click(function () {
+            $(".googleCloud").css("display", "flex"), $(".amazone").css("display", "none"), $(".microsoft").css("display", "none");
+        }),
+        $(".amz").click(function () {
+            $(".googleCloud").css("display", "none"), $(".amazone").css("display", "flex"), $(".microsoft").css("display", "none");
+        }),
+        $(".mic").click(function () {
+            $(".microsoft").css("display", "flex"), $(".googleCloud").css("display", "none"), $(".amazone").css("display", "none");
+        });
+
+    const listItem = document.querySelectorAll(".partners-list-item");
+    const brandInfo = document.querySelectorAll(".brand-info");
+    const brandServices = document.querySelectorAll(".brand-service");
+    const brandSliders = document.querySelectorAll(".partners-slider");
+    listItem.forEach(element => {
+
+        if (element.classList.contains("active") && element.closest(".offerItem").classList.contains("active")) {
+            brandInfo.forEach(item => {
+                if (item.getAttribute("data-id") == element.id) {
+                    item.style.display = "flex"
+                } else {
+                    item.style.display = "none"
+                }
+            });
+            brandServices.forEach(item => {
+                if (item.getAttribute("data-servicesid") == element.id) {
+                    item.classList.add("active");
+                    item.classList.add("show");
+                } else {
+                    item.classList.remove("active");
+                    item.classList.remove("show");
+                }
+            });
+            brandSliders.forEach(item => {
+                if (item.getAttribute("data-sliderid") == element.id) {
+                    item.style.display = "flex"
+                } else {
+                    item.style.display = "none"
+                }
+            });
+        }
+
+        element.addEventListener("click", function () {
+            brandInfo.forEach(item => {
+                if (item.getAttribute("data-id") == element.id) {
+                    item.style.display = "flex"
+                } else {
+                    item.style.display = "none"
+                }
+            });
+            brandServices.forEach(item => {
+                if (item.getAttribute("data-servicesid") == element.id) {
+                    item.classList.add("active");
+                    item.classList.add("show");
+                } else {
+                    item.classList.remove("active");
+                    item.classList.remove("show");
+                }
+            });
+            brandSliders.forEach(item => {
+                if (item.getAttribute("data-sliderid") == element.id) {
+                    item.style.display = "flex"
+                } else {
+                    item.style.display = "none"
+                }
+            });
+        })
+
+    });
+
+});
+
+$(".rd-center .read-more-rd").on("click", function (e) {
+    $('#continue-rd').show();
+    $(".read-more-rd").hide();
+});
+
+function newsFilter(val, isFirst) {
+
+    $(".dt-news-list-item").each(function () {
+        var condition = true;
+        if ($(".dt-news-select option:selected").val() != "") {
+            if (isFirst) {
+                condition = condition && ($(this).data('year') == val);
+            }
+            else {
+                condition = condition && ($(this).data('year') == val[0].value);
+            }
+        }
+        if (condition) {
+            $(this).show();
+        }
+        else {
+            $(this).hide();
+        }
+    });
+
+};
+newsFilter($(".dt-news-select option:selected").val(), true);

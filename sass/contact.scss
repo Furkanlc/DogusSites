@@ -1,0 +1,176 @@
+header {
+  border: 1px solid rgba(104, 104, 104, 0.05);
+}
+
+.container-contact {
+  padding: 0;
+  margin: 0;
+
+  .container-content {
+    display: none;
+    .breadcrumb {
+      background: none;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 3.125rem 0 2rem;
+      margin: 0;
+      margin-left: 50px;
+
+      .breadcrumb-item {
+        span {
+          color: black;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  .contact {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    .contact-img {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+
+      img {
+        object-fit: cover;
+        max-width: 1440px;
+        height: 325px;
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+    }
+    .container-info {
+      margin-top: 20px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .adress {
+        .head {
+          font-size: 20px;
+          font-weight: 700;
+          p {
+            padding: 10px 40px;
+          }
+        }
+      }
+
+      .yasal {
+        .head {
+          font-size: 20px;
+          font-weight: 700;
+
+          p {
+            padding: 10px 40px;
+          }
+        }
+      }
+
+      .contact {
+        .head {
+          font-size: 20px;
+          font-weight: 700;
+          p {
+            padding: 10px 40px;
+          }
+        }
+      }
+    }
+
+    .forms {
+      margin-top: 20px;
+      width: 100%;
+      form {
+        border-radius: 15px;
+        width: 100%;
+        padding: 20px 50px;
+        background-color: #fbfbfb;
+      }
+
+      .maps {
+        margin-top: 40px;
+        margin: 0 30px;
+
+        .map-container {
+          overflow: hidden;
+          padding-bottom: 56.25%;
+          position: relative;
+          height: 0;
+
+          iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container-contact {
+    .container-content {
+      display: block;
+    }
+
+    .contact {
+      .container-info {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        .adress {
+          width: 33%;
+          margin: 0;
+          padding: 0 20px;
+          content: "";
+          border-right: 1px solid black;
+          p {
+            padding: 0;
+          }
+        }
+        .yasal {
+          width: 33%;
+          margin: 0;
+          padding: 0 20px;
+          content: "";
+          border-right: 1px solid rgb(88, 36, 36);
+        }
+        .contact {
+          width: 33%;
+          margin: 0;
+          padding: 0 20px;
+        }
+      }
+
+      .forms {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        form {
+          width: 50%;
+        }
+        .maps {
+          width: 50%;
+        }
+      }
+
+      .contact-img {
+        h2 {
+          font-size: 3rem;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
